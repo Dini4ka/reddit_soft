@@ -10,7 +10,7 @@ class reddit_bot:
         self.driver = uc.Chrome()
 
     def get_reddit(self):
-        self.driver.get('https://www.reddit.com/login/?dest=https%3A%2F%2Fwww.reddit.com%2F')
+        self.driver.get(AUTH_LINK)
 
     def auth(self):
         # Enter login and password
@@ -20,6 +20,9 @@ class reddit_bot:
         # Clicking button
         self.driver.find_element(By.CSS_SELECTOR, '.m-full-width').click()
         sleep(4)
+
+    def making_posts(self, post):
+        self.driver.get(CREATE_POST_LINK)
 
     def end(self):
         self.driver.close()
