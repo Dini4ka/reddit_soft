@@ -55,5 +55,5 @@ if __name__ == '__main__':
     bot.get_reddit()
     bot.auth()
     #bot.making_posts('Всем привет', 'Привет, ребята, я новенький! ')
-    bot.comment('https://www.reddit.com/r/marvelmemes/comments/11ysmwq/pour_one_out_for_all_the_bbegs_of_the_world/', 'Holly shit! ')
+    #bot.comment('https://www.reddit.com/r/marvelmemes/comments/11ysmwq/pour_one_out_for_all_the_bbegs_of_the_world/', 'Holly shit! ')
     bot.end()
