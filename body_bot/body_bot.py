@@ -21,8 +21,18 @@ class reddit_bot:
         self.driver.find_element(By.CSS_SELECTOR, '.m-full-width').click()
         sleep(4)
 
-    def making_posts(self, post):
+    def making_posts(self, title, post):
+        # Going to the post link
         self.driver.get(CREATE_POST_LINK)
+
+        # Putting title
+        self.driver.find_element(By.CSS_SELECTOR, '.PqYQ3WC15KaceZuKcFI02').send_keys(title)
+
+        # Putting post's text
+        self.driver.find_element(By.CSS_SELECTOR, '.notranslate').send_keys(post)
+
+        # Clicking for post
+        self.driver.find_element(By.CSS_SELECTOR, '._18Bo5Wuo3tMV-RDB8-kh8Z').click()
 
     def end(self):
         self.driver.close()
@@ -32,4 +42,5 @@ if __name__ == '__main__':
     bot = reddit_bot()
     bot.get_reddit()
     bot.auth()
+    bot.making_posts('Всем привет', 'Привет, ребята, я новенький! ')
     bot.end()
